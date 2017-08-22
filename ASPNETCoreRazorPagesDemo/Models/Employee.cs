@@ -18,6 +18,7 @@ namespace ASPNETCoreRazorPagesDemo.Models
         public string LastName { get; set; }
 
         [DisplayName("Date of Birth:")]
+        [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
 
         [DisplayName("ID:")]

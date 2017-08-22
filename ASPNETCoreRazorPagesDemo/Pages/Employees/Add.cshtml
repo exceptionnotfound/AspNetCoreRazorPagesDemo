@@ -1,5 +1,26 @@
 ﻿@page
-@model ASPNETCoreRazorPagesDemo.Pages.Employees.AddModel
+@using ASPNETCoreRazorPagesDemo.Models
+
+@functions
+{
+    [TempData]
+    public string Message { get; set; }
+
+    [BindProperty]
+    public Employee Employee { get; set; }
+
+    public IActionResult OnPost()
+    {
+        if (!ModelState.IsValid)
+        {
+            return Page();
+        }
+
+        Message = Employee.FirstName + " " + Employee.LastName + ", ID " + Employee.ID.ToString() + " would have been added.";
+
+        return RedirectToPage("Index");
+    }
+}
 
 <h2>Add an Employee</h2>
 <a asp-page="Index">Back to Employees</a>
@@ -9,22 +30,22 @@
         <div>
             <label asp-for="Employee.FirstName"></label>
             <input type="text" asp-for="Employee.FirstName" />
-            <span asp-validation-for="Employee.FirstName" />
+            <span asp-validation-for="Employee.FirstName"></span>
         </div>
         <div>
             <label asp-for="Employee.LastName"></label>
             <input type="text" asp-for="Employee.LastName" />
-            <span asp-validation-for="Employee.LastName" />
+            <span asp-validation-for="Employee.LastName"></span>
         </div>
         <div>
             <label asp-for="Employee.DateOfBirth"></label>
             <input type="text" asp-for="Employee.DateOfBirth" />
-            <span asp-validation-for="Employee.DateOfBirth" />
+            <span asp-validation-for="Employee.DateOfBirth"></span>
         </div>
         <div>
             <label asp-for="Employee.ID"></label>
             <input type="text" asp-for="Employee.ID" />
-            <span asp-validation-for="Employee.ID" />
+            <span asp-validation-for="Employee.ID"></span>
         </div>
     </div>
     <div>
