@@ -1,0 +1,33 @@
+﻿@page
+@model ASPNETCoreRazorPagesDemo.Pages.Employees.AddModel
+
+<h2>Add an Employee</h2>
+<a asp-page="Index">Back to Employees</a>
+
+<form method="post">
+    <div>
+        <div>
+            <label asp-for="Employee.FirstName"></label>
+            <input type="text" asp-for="Employee.FirstName" />
+            <span asp-validation-for="Employee.FirstName" />
+        </div>
+        <div>
+            <label asp-for="Employee.LastName"></label>
+            <input type="text" asp-for="Employee.LastName" />
+            <span asp-validation-for="Employee.LastName" />
+        </div>
+        <div>
+            <label asp-for="Employee.DateOfBirth"></label>
+            <input type="text" asp-for="Employee.DateOfBirth" />
+            <span asp-validation-for="Employee.DateOfBirth" />
+        </div>
+        <div>
+            <label asp-for="Employee.ID"></label>
+            <input type="text" asp-for="Employee.ID" />
+            <span asp-validation-for="Employee.ID" />
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>
